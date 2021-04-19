@@ -1,8 +1,9 @@
+// import nodejs modules 
 const fs = require ('fs')
 const fetch = require ('node-fetch')
 const path = require ('path')
 
-
+// assign url to retrieve json from the web
 let url ="http://jsonplaceholder.typicode.com/posts"
 
 let settings = {method:"Get"};
