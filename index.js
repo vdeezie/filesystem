@@ -1,10 +1,15 @@
 const fs = require ('fs')
-const path = require ('node-fetch')
+const fetch = require ('node-fetch')
+const path = require ('path')
 
 
-const fetch = (`http://jsonplaceholder.typicode.com/posts`)
-.then(res => res.json())
-.then((json) => {
+let url ="http://jsonplaceholder.typicode.com/posts"
+
+let settings = {method:"Get"};
+
+fetch(url, settings)
+    .then(res => res.json())
+    .then((json) => {
         fs.writeFile('./result/posts.json', JSON.stringify(json), () => {
             console.log('File has been written')
         })
